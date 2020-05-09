@@ -15,16 +15,12 @@ import {
   View,
   StatusBar,
   Button,
-  Platform,
 } from 'react-native';
-import ToastExample from './ToastExample';
+import Toast from './ToastExample';
 
 const App = () => {
   function _onPressButton() {
-    return Platform.OS === 'ios'
-      ? null
-      : // : ToastAndroid.show('메시지', 5);
-        ToastExample.show('Awesome', ToastExample.SHORT);
+    Toast.show('Awesome', Toast.SHORT);
   }
   return (
     <>
