@@ -15,13 +15,16 @@ import {
   View,
   StatusBar,
   Button,
-  ToastAndroid,
   Platform,
 } from 'react-native';
+import ToastExample from './ToastExample';
 
 const App = () => {
   function _onPressButton() {
-    return Platform.OS === 'ios' ? null : ToastAndroid.show('메시지', 5);
+    return Platform.OS === 'ios'
+      ? null
+      : // : ToastAndroid.show('메시지', 5);
+        ToastExample.show('Awesome', ToastExample.SHORT);
   }
   return (
     <>
@@ -33,7 +36,6 @@ const App = () => {
             onPress={_onPressButton}
             color="black"
           />
-          <Button title={'Main Button'} onPress={_onPressButton} color="blue" />
         </View>
       </SafeAreaView>
     </>
