@@ -18,13 +18,22 @@ import {
   Platform,
 } from 'react-native';
 import ToastExample from './ToastExample';
+import ToastView from './ToastView';
 
 const App = () => {
+  // const _onPressButton = Platform.select({
+  //   ios: () => {
+  //     ToastView.show('Awesome', 10);
+  //   },
+  //   android: () => {
+  //     ToastExample.show('Awesome', ToastExample.SHORT);
+  //   },
+  // });
+
   function _onPressButton() {
     return Platform.OS === 'ios'
-      ? null
-      : // : ToastAndroid.show('메시지', 5);
-        ToastExample.show('Awesome', ToastExample.SHORT);
+      ? ToastView.show('Awesome', 10)
+      : ToastExample.show('Awesome', ToastExample.SHORT);
   }
   return (
     <>
