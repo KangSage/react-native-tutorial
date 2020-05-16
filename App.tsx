@@ -15,25 +15,12 @@ import {
   View,
   StatusBar,
   Button,
-  Platform,
 } from 'react-native';
-import ToastExample from './ToastExample';
-import ToastView from './ToastView';
+import Toast from './ToastExample';
 
 const App = () => {
-  // const _onPressButton = Platform.select({
-  //   ios: () => {
-  //     ToastView.show('Awesome', 10);
-  //   },
-  //   android: () => {
-  //     ToastExample.show('Awesome', ToastExample.SHORT);
-  //   },
-  // });
-
   function _onPressButton() {
-    return Platform.OS === 'ios'
-      ? ToastView.show('Awesome', 10)
-      : ToastExample.show('Awesome', ToastExample.SHORT);
+    Toast.show('Awesome', Toast.SHORT);
   }
   return (
     <>

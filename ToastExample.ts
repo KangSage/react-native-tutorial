@@ -1,5 +1,14 @@
-import { NativeModules } from 'react-native';
+import { NativeModules, Platform } from 'react-native';
 
-const ToastExample = NativeModules.ToastExample;
+type Duration = 'SHORT' | 'LONG';
 
-export default ToastExample;
+interface Toast {
+  SHORT: 'SHORT';
+  LONG: 'LONG';
+  show(message: string, duration: Duration): void;
+}
+
+const NativeToast: Toast =
+  Platform.OS === 'ios' ? NativeModules.ToastView : NativeModules.ToastExample;
+
+export default NativeToast;
