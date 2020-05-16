@@ -1,7 +1,7 @@
 //
 // ToastView.swift
 // AwesomeTSProject
-// 
+//
 // Created by KangSH on 2020/05/01.
 //
 import UIKit
@@ -22,7 +22,7 @@ class ToastView: NSObject {
     DispatchQueue.main.async {
       let view = ToastView.root?.view
       let rawDuration = self.setDuration(duration: duration)
-      
+
       do {
         if #available(iOS 11.0, *) {
           // Toast View
@@ -50,7 +50,7 @@ class ToastView: NSObject {
       }
     }
   }
-  
+
   private func setDuration (duration:String) -> TimeInterval {
     switch duration {
       case "SHORT": return 2.0
